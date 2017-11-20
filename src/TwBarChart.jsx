@@ -1,10 +1,10 @@
 import React from 'react';
-import V, { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryContainer } from 'victory';
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryContainer } from 'victory';
 
 import { AutoSizer } from 'react-virtualized';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import TwTheme from './theme';
-import _ from 'lodash';
 
 const dayMapping = {
   0: 'Sun',
