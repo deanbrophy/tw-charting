@@ -48,26 +48,31 @@ const buttonStyle = {
 };
 
 export const TwTabs = (props) => {
-  const selected = props.children.find(f => f.props.selected);
+  const selected = props
+    .children
+    .find(f => f.props.selected);
 
-  return (<div style={outerContainerStyle}>
-    <div style={tabContainerStyle} >
-      {props.children}
+  return (
+    <div style={outerContainerStyle}>
+      <div style={tabContainerStyle}>
+        {props.children}
+      </div>
+      <Divider /> {selected.props.children}
     </div>
-    <Divider />
-    {selected.props.children}
-  </div>);
+  );
 };
 
-export const TwTab = props => (<div style={tabStyle}>
-  <FlatButton style={buttonStyle}>
-    <Subheader style={subheaderStyle}>{
-              props.label}
-    </Subheader>
-    <div style={tabValueStyle}>
-      {props.value}
-    </div>
-  </FlatButton>
-  {props.selected ? <Divider style={dividerStyle} /> : null}
-                               </div>);
-
+export const TwTab = props => (
+  <div style={tabStyle}>
+    <FlatButton style={buttonStyle}>
+      <Subheader style={subheaderStyle}>{props.label}
+      </Subheader>
+      <div style={tabValueStyle}>
+        {props.value}
+      </div>
+    </FlatButton>
+    {props.selected
+      ? <Divider style={dividerStyle} />
+      : null}
+  </div>
+);
